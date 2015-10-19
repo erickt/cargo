@@ -109,6 +109,7 @@ fn mk(config: &Config, path: &Path, name: &str,
     if !opts.bin {
         ignore.push_str("Cargo.lock\n");
     }
+    ignore.push_str("*.sw[po]\n");
 
     let vcs = match (opts.version_control, cfg.version_control, in_existing_vcs_repo) {
         (None, None, false) => VersionControl::Git,
